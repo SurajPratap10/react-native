@@ -51,7 +51,8 @@ fb_native.genrule(
         exclude = [
             "**/__*__/**",
 
-            # Subfolders with their own BUCK files, referenced below
+            # Subfolders with their own BUCK files are referenced below
+            
             "packages/rn-tester/**",
         ],
     ) + [
@@ -672,6 +673,7 @@ rn_apple_library(
 # Ideally, each component view gets its own target, and each target uses react_fabric_component_plugin_provider.
 # For each component, an app can import the base component view, or an app-specific subclass.
 # i.e. Apps depend on "ImageView" target for RCTImageComponentView.h, and "FBReactImageView" target for FBReactImageComponentView.h
+
 rn_xplat_cxx_library2(
     name = "RCTFabricComponentViewsBase",
     srcs = glob(REACT_COMPONENTVIEWS_BASE_FILES),
